@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Yash Srivastava — Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══ CUSTOM CURSOR ══ -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- ══ AUDIO FILES ══ -->
+  <!-- Place your intro sound as: assets/intro-sound.mp3  -->
+  <!-- Place your bg music as:    assets/bg-music.mp3     -->
+  <audio id="yeah-audio" preload="auto">
+    <source src="assets/intro-sound.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="bg-audio" loop preload="auto">
+    <source src="assets/bg-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- ══ MUSIC TOGGLE BUTTON ══ -->
+  <button id="music-btn" onclick="toggleMusic()" title="Toggle music">
+    <svg id="ico-on" width="18" height="18" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18V5l12-2v13"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+    <svg id="ico-off" width="18" height="18" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      style="display:none">
+      <line x1="1" y1="1" x2="23" y2="23"/>
+      <path d="M9 9v9M15 9.34V5L3 7v10"/>
+      <circle cx="6" cy="18" r="3"/>
+      <circle cx="18" cy="16" r="3"/>
+    </svg>
+  </button>
+
+  <!-- ══ CLICK TO START SCREEN ══ -->
+  <div id="click-screen">
+    <p class="cs-logo">&#9654;&nbsp;&nbsp;YASH SRIVASTAVA</p>
+    <button class="cs-btn" onclick="startExperience()">ENTER PORTFOLIO</button>
+    <p class="cs-hint">Click to enable sound &amp; launch</p>
+  </div>
+
+  <!-- ══ INTRO ANIMATION ══ -->
+  <div id="intro">
+    <div id="intro-card">
+      <div id="intro-bar"></div>
+      <div id="intro-text">
+        <p id="intro-pre">NOW PRESENTING</p>
+        <h1 id="intro-n1">YASH</h1>
+        <h1 id="intro-n2">SRIVASTAVA</h1>
+        <p id="intro-sub">B.TECH CSE &nbsp;&#183;&nbsp; 2025&#8211;2029</p>
+      </div>
+    </div>
+    <div id="intro-veil"></div>
+  </div>
+
+  <!-- ══════════════════════════════
+       MAIN SITE
+  ══════════════════════════════ -->
+  <div id="site">
+
+    <!-- NAVBAR -->
+    <nav>
+      <a href="#" class="nav-logo" onclick="showPage('home');return false;">YS//</a>
+      <ul class="nav-links">
+        <li><a href="#" onclick="showPage('home');return false;">Home</a></li>
+        <li><a href="#" onclick="showPage('home');setTimeout(function(){document.getElementById('about').scrollIntoView({behavior:'smooth'});},120);return false;">About</a></li>
+        <li><a href="#" onclick="showPage('home');setTimeout(function(){document.getElementById('skills').scrollIntoView({behavior:'smooth'});},120);return false;">Skills</a></li>
+        <li><a href="#" onclick="showPage('projects');return false;">Projects</a></li>
+        <li><a href="#" onclick="showPage('journey');return false;">Journey</a></li>
+        <li><a href="#" onclick="showPage('contact');return false;">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- ══ HOME PAGE ══ -->
+    <div id="page-home">
+
+      <!-- HERO SECTION -->
+      <section id="home">
+        <div class="hero-scan"></div>
+        <div class="hero-grid-bg"></div>
+        <div class="hero-inner">
+
+          <!-- Left: Text -->
+          <div class="hero-content">
+            <div class="hero-tag">&#9679;&nbsp; Available for opportunities</div>
+            <h1 class="hero-name">YASH</h1>
+            <h1 class="hero-name-red">SRIVASTAVA</h1>
+            <p class="hero-role">B.Tech CSE &nbsp;/&nbsp; 2025&#8211;2029 &nbsp;/&nbsp; Gurgaon, India</p>
+            <div class="hero-div"></div>
+            <p class="hero-quote">"Building strong foundations in code,<br>one problem at a time."</p>
+            <div class="hero-btns">
+              <a href="#" class="btn btn-red" onclick="showPage('projects');return false;">&#9654;&nbsp; View Projects</a>
+              <a href="#" class="btn btn-out" onclick="showPage('contact');return false;">&#9993;&nbsp; Get in Touch</a>
+            </div>
+          </div>
+
+          <!-- Right: Photo -->
+          <!-- Replace assets/photo.png with your actual photo file -->
+          <div class="photo-wrap">
+            <div class="photo-frame">
+              <img src="assets/photo.png" alt="Yash Srivastava"/>
+            </div>
+            <div class="photo-border"></div>
+            <div class="hpc hpc-tl"></div>
+            <div class="hpc hpc-tr"></div>
+            <div class="hpc hpc-bl"></div>
+            <div class="hpc hpc-br"></div>
+            <span class="code-tag ct-1">&lt;dev/&gt;</span>
+            <span class="code-tag ct-2">&#123;python&#125;</span>
+            <span class="code-tag ct-3">// CSE_2029</span>
+            <div class="photo-status">
+              <div class="sdot"></div>
+              <span>Online &amp; Building</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="alt-bg">
+        <div class="s-head reveal">
+          <span class="s-label">01 / about</span>
+          <h2 class="s-title">WHO I AM</h2>
+          <div class="s-line"></div>
+        </div>
+        <div class="about-grid">
+          <div class="acard reveal">
+            <span class="acard-icon">&#9670;</span>
+            <h3>THE STORY</h3>
+            <p>I am a first-year Computer Science student currently exploring different domains
+            in tech. Focused on building strong fundamentals in programming and problem-solving.
+            Currently learning Python, Data Structures &amp; Algorithms, and C, while also
+            exploring Data Science.</p>
+          </div>
+          <div class="acard reveal" style="transition-delay:.15s">
+            <span class="acard-icon">&#9671;</span>
+            <h3>THE VISION</h3>
+            <p>To become a skilled developer capable of solving real-world problems through
+            technology, while continuously learning and adapting to new advancements in software
+            development and data science. Persistence and curiosity are the foundation of mastery.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section id="skills">
+        <div class="s-head reveal">
+          <span class="s-label">02 / skills</span>
+          <h2 class="s-title">LOADOUT</h2>
+          <div class="s-line"></div>
+          <p class="s-desc">Current skill status and active training modules.</p>
+        </div>
+        <div class="skills-grid">
+
+          <!-- Core Programming -->
+          <div class="sgroup reveal">
+            <span class="sg-label">Core Programming</span>
+            <div class="sk-row"><span class="sk-name">Python</span><span class="badge b-red">Learning</span></div>
+            <div class="sk-row"><span class="sk-name">C Language</span><span class="badge b-red">Learning</span></div>
+            <div class="sk-row"><span class="sk-name">Data Structures &amp; Algorithms</span><span class="badge b-red">Learning</span></div>
+          </div>
+
+          <!-- Development -->
+          <div class="sgroup reveal" style="transition-delay:.1s">
+            <span class="sg-label">Development</span>
+            <div class="sk-row"><span class="sk-name">React</span><span class="badge b-wht">Beginner</span></div>
+            <div class="sk-row"><span class="sk-name">Firebase</span><span class="badge b-red">Learning</span></div>
+          </div>
+
+          <!-- Tools -->
+          <div class="sgroup reveal" style="transition-delay:.2s">
+            <span class="sg-label">Tools &amp; Platforms</span>
+            <div class="sk-row"><span class="sk-name">Git &amp; GitHub</span><span class="badge b-wht">Beginner</span></div>
+            <div class="sk-row"><span class="sk-name">VS Code</span><span class="badge b-wht">Beginner</span></div>
+            <div class="sk-row"><span class="sk-name">Data Science</span><span class="badge b-red">Exploring</span></div>
+          </div>
+
+        </div>
+      </section>
+
+    </div><!-- /#page-home -->
+
+    <!-- ══ PROJECTS PAGE ══ -->
+    <div id="page-projects" style="display:none">
+      <section style="padding-top:110px" class="alt-bg">
+        <div class="s-head reveal">
+          <span class="s-label">03 / projects</span>
+          <h2 class="s-title">MISSIONS</h2>
+          <div class="s-line"></div>
+          <p class="s-desc">Active missions and completed builds.</p>
+        </div>
+        <!-- Projects are rendered by JavaScript from the myProjects array in main.js -->
+        <div class="proj-grid" id="proj-grid"></div>
+      </section>
+    </div>
+
+    <!-- ══ JOURNEY PAGE ══ -->
+    <div id="page-journey" style="display:none">
+      <section style="padding-top:110px">
+        <div class="s-head reveal">
+          <span class="s-label">04 / journey</span>
+          <h2 class="s-title">TIMELINE</h2>
+          <div class="s-line"></div>
+          <p class="s-desc">Every great story has a beginning. This is mine.</p>
+        </div>
+        <div class="timeline">
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2025 &#8212; Present</span>
+            <h3 class="tl-title">B.Tech CSE &#8212; 2025&#8211;2029</h3>
+            <p class="tl-desc">Enrolled in a 4-year B.Tech CSE program. Building strong fundamentals
+            in programming, mathematics, and computer science theory.</p>
+          </div>
+
+          <div class="tl-item reveal" style="transition-delay:.1s">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2025 &#8212; Ongoing</span>
+            <h3 class="tl-title">Learning Python &amp; C</h3>
+            <p class="tl-desc">Started with the two foundational languages of computer science.
+            Solving problems and understanding how computers work from the inside out.</p>
+          </div>
+
+          <div class="tl-item reveal" style="transition-delay:.2s">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2025 &#8212; Ongoing</span>
+            <h3 class="tl-title">Data Structures &amp; Algorithms</h3>
+            <p class="tl-desc">Diving deep into DSA &#8212; the language of technical interviews.
+            Arrays, linked lists, recursion, sorting, and beyond.</p>
+          </div>
+
+          <div class="tl-item reveal" style="transition-delay:.3s">
+            <div class="tl-dot"></div>
+            <span class="tl-date">2025 &#8212; Ongoing</span>
+            <h3 class="tl-title">React &amp; Web Development</h3>
+            <p class="tl-desc">Began building interactive UIs with React. This portfolio is
+            the direct result of that early exploration in frontend development.</p>
+          </div>
+
+          <div class="tl-item reveal" style="transition-delay:.4s">
+            <div class="tl-dot"></div>
+            <span class="tl-date">Future &#9670;</span>
+            <h3 class="tl-title">Full-Stack &amp; Data Science</h3>
+            <p class="tl-desc">The next chapter &#8212; real impactful applications that solve
+            real problems. The story is still being written.</p>
+          </div>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- ══ CONTACT PAGE ══ -->
+    <div id="page-contact" style="display:none">
+      <section style="padding-top:110px" class="alt-bg">
+        <div class="s-head reveal">
+          <span class="s-label">05 / contact</span>
+          <h2 class="s-title">CONNECT</h2>
+          <div class="s-line"></div>
+          <p class="s-desc">Open to collaborations, ideas, and conversations.</p>
+        </div>
+        <div class="contact-grid">
+
+          <!-- Contact Links -->
+          <div class="c-items">
+
+            <a href="mailto:yashshiv2006@gmail.com" class="c-link reveal">
+              <div class="c-ico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="c-lbl">Email</p>
+                <p class="c-val">yashshiv2006@gmail.com</p>
+              </div>
+            </a>
+
+            <a href="tel:+918126463927" class="c-link reveal" style="transition-delay:.08s">
+              <div class="c-ico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="c-lbl">Phone</p>
+                <p class="c-val">+91 81264 63927</p>
+              </div>
+            </a>
+
+            <a href="https://github.com/yashshiv2006-web" target="_blank" rel="noopener" class="c-link reveal" style="transition-delay:.16s">
+              <div class="c-ico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="c-lbl">GitHub</p>
+                <p class="c-val">yashshiv2006-web</p>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/yash-srivastava-691a2337a" target="_blank" rel="noopener" class="c-link reveal" style="transition-delay:.24s">
+              <div class="c-ico">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+              </div>
+              <div>
+                <p class="c-lbl">LinkedIn</p>
+                <p class="c-val">Yash Srivastava</p>
+              </div>
+            </a>
+
+          </div>
+
+          <!-- Message Card -->
+          <div class="c-msg reveal" style="transition-delay:.15s">
+            <h3>&#9670; LET'S BUILD SOMETHING</h3>
+            <p>Whether you have a project idea, want to collaborate, or just want to connect
+            &#8212; I'm always open. Currently a first-year CSE student actively exploring
+            technology and building skills daily.</p>
+            <p class="c-meta">
+              &#9670;&nbsp; GURGAON, INDIA<br>
+              &#9670;&nbsp; OPEN TO OPPORTUNITIES<br>
+              &#9670;&nbsp; B.TECH CSE 2025&#8211;2029
+            </p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        CRAFTED BY &nbsp;<span>YASH SRIVASTAVA</span>&nbsp; //&nbsp;
+        B.TECH CSE 2025&#8211;2029 &nbsp;//&nbsp; GURGAON, INDIA
+      </footer>
+
+    </div><!-- /#page-contact -->
+
+  </div><!-- /#site -->
+
+  <script src="js/main.js"></script>
+</body>
+</html>
